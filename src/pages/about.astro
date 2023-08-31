@@ -2,6 +2,7 @@
 const pageTitle = "About Me";
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Hamburger from '../components/Hamburger.astro';
 
 const identity = {
   firstName: "Sarah",
@@ -69,5 +70,8 @@ import '../styles/global.css';
 		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}	
 	
 		<Footer />
+		<script>
+			import "../scripts/menu.js";
+	   </script>
 	</body>
 </html>
