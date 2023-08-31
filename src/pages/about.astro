@@ -1,8 +1,7 @@
 ---
+
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "About Me";
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import Hamburger from '../components/Hamburger.astro';
 
 const identity = {
   firstName: "Sarah",
@@ -18,18 +17,9 @@ const textCase = "uppercase";
 const happy = true;
 const finished = false;
 const goal = 3;
-
-
-import '../styles/global.css';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
+<BaseLayout pageTitle={pageTitle}>
 		<style define:vars={{skillColor, textCase}}>
 			h1 {
 			  color: purple;
@@ -41,11 +31,6 @@ import '../styles/global.css';
 				text-transform: var(--textCase);
 			}
 		  </style>
-	</head>
-	<body>
-		<Header />
-		
-		<h1>{pageTitle}</h1>
 		<p>Here are a few facts about me:</p>
 <ul>
   <li>My name is {identity.firstName}.</li>
@@ -69,9 +54,4 @@ import '../styles/global.css';
 		
 		{goal === 3 ? <p>My goal is to finish in 3 days.</p> : <p>My goal is not 3 days.</p>}	
 	
-		<Footer />
-		<script>
-			import "../scripts/menu.js";
-	   </script>
-	</body>
-</html>
+</BaseLayout>
